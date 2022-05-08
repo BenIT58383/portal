@@ -1,6 +1,6 @@
 // JavaScript Document
 document.write(
-	'<div id="live_img" style="position:relative; "><div id="floatChat" style="Z-INDEX: 5; RIGHT: 40px; WIDTH: 76px; POSITION: absolute; TOP: 210px; HEIGHT: 120px;"><a href="tongji.html" ><img src="/images/logo01.png" border="0" style="margin-bottom:10px;width: 100px;" /></a><a href="/download/" ><img src="/images/js/logo02.png" border="0" style="margin-bottom:10px;width: 100px;" /></a><a href="wendang.html" ><img src="/images/js/logo03.png" border="0" style="margin-bottom:10px;width: 100px;" /></a><span onclick="show()" style="cursor: pointer">[X]</span></div></div>'
+	'<div id="live_img" style="position:relative; "><div id="floatChat" style="Z-INDEX: 5; RIGHT: 40px; WIDTH: 76px; POSITION: absolute; TOP: 210px; HEIGHT: 120px;"><a href="tongji.html" ><img src="/static/home/junxuan/images/logo01.png" border="0" style="margin-bottom:10px;width: 100px;" /></a><a href="" ><img src="/static/home/junxuan/images/logo02.png" border="0" style="margin-bottom:10px;width: 100px;" /></a><a href="" ><img src="/static/home/junxuan/images/logo03.png" border="0" style="margin-bottom:10px;width: 100px;" /></a><span onclick="show()" style="cursor: pointer">[X]</span></div></div>'
 );
 lastScrollYChat = 0;
 function floatDiv() {
