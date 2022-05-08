@@ -229,3 +229,74 @@ div.vbInfo * {font-weight:Roboto,Arial,Tahoma !important;}
 .vbdt-image img {float:left;width:155px; margin-right:20px;}
 #content_layyk,#content_hethan{display: flex;}
 #content_layyk .paging,#content_hethan .paging{margin: 25px 10px 10px;}
+
+.body-vf{
+    margin: 0 auto;
+    background-color: white;
+}
+
+.container-vf{
+    padding-top: 50px;
+}
+
+#sb_vf{ 
+    border: #0072c6;
+    border-radius: 5px;
+    height: 40px;
+    width: 80px;
+    margin-top: 10px;
+    color: #FFFFFF;
+    background-color: 	#0066CC;
+    font-family: monospace;
+}
+
+#ip_code{ 
+    border: 2px solid #C1CDC1;
+    border-radius: 5px ;
+    height: 30px;
+    width: 150px;
+    margin-top: 10px;
+    color: #000000;
+    font-family: monospace;
+}
+
+#customAlert{ 
+    border-radius: 5px;
+    top: 0;
+    display: none;
+    position: fixed;
+    padding-left: 100px;
+}
+
+#box{ 
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 400px;
+    height: 150px;
+    width: 500px;
+    text-align: center;
+    box-shadow: 2px 2px 8px black;
+    background-color: #F1FAEE
+}
+
+.heading{
+    background-color: #E63946;
+    color: #FFFFFF;
+    font-size: large;
+    padding: 5px;
+}
+
+.content{ margin-top: 20px;
+}
+
+#confirmBtn{
+    height: 25px;
+    width: 80px;
+    border: 2px solid #1D3557;
+    border-radius: 8px;
+    background-color: #1D3557;
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-top: 20px;
+
+}
