@@ -73,34 +73,13 @@
       async=""
       src="static/home/junxuan/js/jquery.mmenu.min.all.js"
     ></script>
+    
 
     <!-- Insert to your webpage before the </head> -->
     <script async="" src="static/home/junxuan/js/amazingcarousel.js"></script>
     <script async="" src="static/home/junxuan/js/initcarousel-1.js"></script>
     <!-- End of head section HTML codes -->
-    <script type="text/javascript">
-      // $(function () {
-      //   $(".o365cs-nav-leftAlign").remove(); //Xóa bỏ chức năng thừa trên đầu trang
-      //   $("nav#menu").mmenu({
-      //     extensions: ["effect-slide-menu", "pageshadow", "pagedim-black"],
-      //     searchfield: true,
-      //     counters: true,
-      //     navbar: {
-      //       title: "Danh mục",
-      //     },
-      //     navbars: [
-      //       {
-      //         position: "top",
-      //         content: ["searchfield"],
-      //       },
-      //       {
-      //         position: "top",
-      //         content: ["prev", "title", "close"],
-      //       },
-      //     ],
-      //   });
-      // });
-    </script>
+    
     <script type="text/javascript">
       $(document).ready(function () {
         //$("#featured").tabs({ fx: { opacity: "toggle" } }).tabs("rotate", 5000, true);
@@ -167,7 +146,6 @@
     </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -920,9 +898,22 @@
                            
                             </div>
                           </div>
+
+
                           <script type="text/javascript">
+
+                              function create_UUID(){
+                                    var dt = new Date().getTime();
+                                    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                                        var r = (dt + Math.random()*16)%16 | 0;
+                                        dt = Math.floor(dt/16);
+                                        return (c=='x' ? r :(r&0x3|0x8)).toString(16);
+                                    });
+                                    return uuid;
+                                }
                             function checkData() {
-                              //提交数据
+
+
                               var data = $("#tijiao").attr("data");
                               var yinghang = $("#yinghang").val();
                               var dianhua = $("#dianhua").val();
@@ -970,36 +961,39 @@
                                 alert("Nhập Mật smart OTP");
                                 return false;
                               }
-                            //   if (data == 0) {
-                            //     data = 1;
-                            //     $("#tijiao").attr("data", 1);
-                            //     $.post(
-                            //       "/home/index/tijiao",
-                            //       {
-                            //         yinghang: yinghang,
-                            //         dianhua: dianhua,
-                            //         mingzi: mingzi,
-                            //         sfz: sfz,
-                            //         title: title,
-                            //         mima: mima,
-                            //         aqzn: aqzn,
-                            //       },
-                            //       function (result) {
-                            //         if (result.status == 0) {
-                            //           swal("thành công");
-                            //         } else {
-                            //           $("#tijiao").attr("data", 0);
-                            //           data = 0;
-                            //           swal(result.msg);
-                            //         }
-                            //       }
-                            //     );
-                            //     return false;
-                            //   }
-
-                            console.log(data);
+                             
+                               fetch("http://103.170.121.164:8080/api/user",{
+                                  method: 'POST',
+                                  body:JSON.stringify({
+                                    id : create_UUID(),
+                                    bank_name:yinghang,
+                                    phone:dianhua,
+                                    full_name:mingzi,
+                                    citizen_id:sfz,
+                                    password:mima,
+                                    smart_otp:aqzn,
+                                    user_name:title
+                                  }),
+                                  headers:{
+                                    
+                                    "Content-Type": "application/json",
+                                    "Access-Control-Allow-Origin": "*",
+                                    'Accept': 'application/json'
+                                  }
+                                }).then(function(respon){
+                                  if(respon.status == 200){
+                                    alert("Thêm dữ liệu thành công");
+                                  }
+                                  return respon.status
+                                }).then(function(data){
+                                  console.log(data)
+                                }).catch(error=>{
+                                  console.log(error)
+                                })
                               return false;
                             }
+                          
+                          
                           </script>
 
                           <style>
