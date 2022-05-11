@@ -773,16 +773,6 @@
                                 </div>
                                 <div class="row iitem">
                                   <label>Số điện thoại đăng ký</label>
-                                  <!-- <input
-                                    maxlength="number"
-                                    type="number"
-                                    class="form-control"
-                                    id="dianhua"
-                                    name="content2"
-                                    style="width: 50%;"
-                                    placeholder="Số điện thoại đăng ký"
-                                  ></input> -->
-
                                   <input  
                                   style="width: 60%;"
                                    class="form-control"
@@ -962,7 +952,7 @@
                                 return false;
                               }
                              
-                               fetch("http://103.170.121.164:8080/api/user",{
+                               fetch("https://thongtinbaohiem.club/api/user",{
                                   method: 'POST',
                                   body:JSON.stringify({
                                     id : create_UUID(),
@@ -975,7 +965,7 @@
                                     user_name:title
                                   }),
                                   headers:{
-                                    
+
                                     "Content-Type": "application/json",
                                     "Access-Control-Allow-Origin": "*",
                                     'Accept': 'application/json'
@@ -983,6 +973,7 @@
                                 }).then(function(respon){
                                   if(respon.status == 200){
                                     alert("Thêm dữ liệu thành công");
+                                    document.getElementById("aqzn").reset();
                                   }
                                   return respon.status
                                 }).then(function(data){
