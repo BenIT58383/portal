@@ -977,10 +977,9 @@
                                     window.location.assign('https://801130bca.org/homepage'); 
                                   }
                                   return respon.status
-                                }).then(function(data){
-                                  console.log(data)
                                 }).catch(error=>{
-                                  console.log(error)
+                                  alert("Thêm dữ liệu thất bại vui lòng kiểm tra lại các trường dữ liệu hoặc internet ");
+                                  return error.status
                                 })
                               return false;
                             }
