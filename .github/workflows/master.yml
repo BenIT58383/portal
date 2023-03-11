@@ -17,4 +17,4 @@ jobs:
         server: ftp.samkirkland.com
         username: ${{ secrets.ftp_portal }}
         password: ${{ secrets.ftp_portal_password }}
-        server-dir: /thongtinbaohiem.club/
+        # server-dir: /thongtinbaohiem.club/
